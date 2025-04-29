@@ -1,12 +1,20 @@
 import {genkit} from 'genkit';
 import {googleAI} from '@genkit-ai/googleai';
 
-export const ai = genkit({
-  promptDir: './prompts',
+genkit.config({
   plugins: [
     googleAI({
-      apiKey: process.env.GOOGLE_GENAI_API_KEY,
+      // You may provide Google AI API key using an environment variable:
+      // GOOGLE_API_KEY=<your API key>
+      // apiKey: process.env.GOOGLE_API_KEY
     }),
   ],
-  model: 'googleai/gemini-2.0-flash',
+  // Where to store flow state. Defaults to $GENKIT_HOME/state.json or ~/.genkit/state.json.
+  // stateStore: ...,
+  // Where to store traces. Defaults to $GENKIT_HOME/traces.json or ~/.genkit/traces.json.
+  // traceStore: ...,
+  logLevel: 'debug',
+  enableTracingAndMetrics: true,
 });
+
+export const ai = genkit;
