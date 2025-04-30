@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */ // eslint-disable-line
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -17,7 +17,7 @@ module.exports = {
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
+          foreground: 'hsl(var(--popover-foreground))',
         },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -33,7 +33,7 @@ module.exports = {
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
+          foreground: 'hsl(var(--accent-foreground))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -46,7 +46,7 @@ module.exports = {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
           '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
+          4: 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
         },
         sidebar: {
@@ -57,7 +57,7 @@ module.exports = {
           accent: 'hsl(var(--sidebar-accent))',
           'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
           border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))'
+          ring: 'hsl(var(--sidebar-ring))',
         }
       },
       borderRadius: {
@@ -68,19 +68,19 @@ module.exports = {
       keyframes: {
         'accordion-down': {
           from: {
-            height: '0'
+            height: '0',
           },
           to: {
-            height: 'var(--radix-accordion-content-height)'
-          }
+            height: 'var(--radix-accordion-content-height)',
+          },
         },
         'accordion-up': {
           from: {
-            height: 'var(--radix-accordion-content-height)'
+            height: 'var(--radix-accordion-content-height)',
           },
           to: {
-            height: '0'
-          }
+            height: '0',
+          },
         }
       },
       animation: {
@@ -89,5 +89,5 @@ module.exports = {
       }
     }
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require('tailwindcss-animate')],
 };

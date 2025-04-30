@@ -27,7 +27,6 @@ export async function middleware(request) {
       return NextResponse.next();
     } catch (error) {
        // Session cookie is invalid or expired. Redirect to login page.
-      console.log('Middleware: Auth check failed, redirecting to /auth.', error.code);
       const loginUrl = new URL('/auth', request.url);
       loginUrl.searchParams.set('redirect', pathname); // Add redirect query param
       return NextResponse.redirect(loginUrl);

@@ -1,7 +1,20 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  images: {
+  allowedDevOrigins: [
+    'http://localhost:9002', 'https://9000-idx-studio-1745946610476.cluster-htdgsbmflbdmov5xrjithceibm.cloudworkstations.dev'
+  ],
+  webpack: (config) => {
+    config.experiments = {
+      asyncWebAssembly: true
+    };
+    config.resolve.fallback = {      
+      ...config.resolve.fallback,
+      process: require.resolve('process/browser')
+    }
+
+    return config;
+  },
+
+    images: {
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,13 +23,6 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-  },
-   experimental: {
-    serverActions: true, // Enable Server Actions if needed for future backend logic
-    // If using body parsing with server actions:
-    // serverActions: {
-    //   bodySizeLimit: '2mb', // Adjust size limit if needed
-    // },
   },
 };
 
